@@ -1,0 +1,66 @@
+.people {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+  @media (min-width: 769px) {
+    flex-direction: row;
+  }
+}
+
+.person {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  @media (min-width: 789px) {
+    padding-right: 40px;
+    padding-bottom: 0;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.personImageWrapper {
+  height: 270px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.name {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-bottom: 30px;
+
+  @media (min-width: 769px) {
+    font-size: 1.8rem;
+  }
+}
+
+.socialMedia {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 150px;
+  display: flex;
+  justify-self: end;
+  justify-content: space-around;
+
+  a {
+    cursor: pointer;
+  }
+}

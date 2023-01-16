@@ -1,0 +1,44 @@
+.container {
+  margin: 0 auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.button {
+  width: 80vw;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+
+  cursor: pointer;
+
+  color: #225322;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  border: none;
+
+  @media (min-width: 250px) {
+    width: 220px;
+  }
+}
+
+.icon {
+  display: none;
+
+  @media (min-width: 250px) {
+    display: inline;
+    width: 18px;
+    height: 18px;
+    margin-top: -3px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

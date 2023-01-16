@@ -1,0 +1,31 @@
+.detail {
+  margin: 0 auto;
+  max-width: 350px;
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.iconWrapper {
+  margin-right: 10px;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  cursor: pointer;
+
+  @media (min-height: 769px) {
+    margin-top: 30px;
+  }
+}
+
+.addToCalendarButton {
+  width: fit-content;
+  margin: 10px auto 0 auto;
+
+  @media (min-width: 769px) {
+    margin-top: 20px;
+  }
+}
