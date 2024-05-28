@@ -39,6 +39,10 @@
   align-content: center;
   justify-content: center;
   margin-bottom: 30px;
+
+  @media (min-width: 769px) {
+    min-height: 270px;
+  }
 }
 
 .name {

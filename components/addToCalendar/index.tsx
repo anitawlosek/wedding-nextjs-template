@@ -1,10 +1,11 @@
 import 'add-to-calendar-button/assets/css/atcb.css';
 import { atcb_action } from "add-to-calendar-button";
 import styles from './addToCalendar.module.scss'
+import buttonStyles from '../button/button.module.scss'
 import { MouseEvent, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarPlus } from "@fortawesome/free-regular-svg-icons";
-import { trackOpenMenu } from "../../lib/tracking";
+import { trackOpenAddToCalendarMenu } from "../../lib/tracking";
 import { setOptionsEventListeners } from "../hero/setOptionsEventListeners";
 
 type CalendarOptions = 'Apple' | 'Google' | 'iCal' | 'Microsoft365' | 'MicrosoftTeams' | 'Outlook.com' | 'Yahoo'
@@ -24,9 +25,10 @@ export type CalendarEventOptions = {
 
 type AddToCalendarProps = {
     calendarEventOptions: CalendarEventOptions
+    buttonClass?: string
 }
 
-export const AddToCalendar = ({ calendarEventOptions }: AddToCalendarProps) => {
+export const AddToCalendar = ({ calendarEventOptions, buttonClass }: AddToCalendarProps) => {
     const button = useRef<HTMLButtonElement>(null)
 
     const options = {
@@ -39,7 +41,7 @@ export const AddToCalendar = ({ calendarEventOptions }: AddToCalendarProps) => {
     const buttonClickHandler = (event: MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
 
-        trackOpenMenu();
+        trackOpenAddToCalendarMenu();
         atcb_action(options, button.current || undefined);
         setOptionsEventListeners();
     }
@@ -47,7 +49,7 @@ export const AddToCalendar = ({ calendarEventOptions }: AddToCalendarProps) => {
     return (
         <div className={styles.container}>
             <button
-                className={styles.button}
+                className={`${buttonClass || `${buttonStyles.primary}`} ${buttonStyles.default} ${styles.button}`}
                 ref={button}
                 onClick={buttonClickHandler}
             >

@@ -1,9 +1,9 @@
-import styles from "./brideAndGroom.module.scss";
+import styles from "./people.module.scss";
 import utilStyles from "../../styles/utils.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF as faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { SocialMediaData } from "./person.type";
+import { SocialMediaData } from "./people.type";
 import { trackSocialMediaClick } from "../../lib/tracking";
 import { makeCall } from "../../lib/makeCall";
 

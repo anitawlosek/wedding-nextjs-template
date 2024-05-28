@@ -31,9 +31,9 @@ export const trackMapClick = () => {
 }
 
 export const EventDetails = ({ details, calendarEventOptions } : EventDetailsProps) => {
-    const mapLink = "https://www.google.com/maps/place/Wierzchowiska+Golf+%26+Country+Club/@51.2361214,22.6079323,10.93z/data=!4m5!3m4!1s0x472255336bae06b9:0x2bf1021d931f3346!8m2!3d51.1736157!4d22.7522949";
+    const mapLink = "https://maps.app.goo.gl/qgW6dhsHjHw6oQGg7";
 
-    return <div className={sectionStyles.wrapper}>
+    return <div className={sectionStyles.wrapper} id={"event"}>
         <div className={sectionStyles.container}>
             <h2 className={utilStyles.heading}>{details.title}</h2>
             <div className={sectionStyles.content}>

@@ -1,5 +1,6 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
+import { Footer } from "../components/footer";
 
 export default function Document() {
     return (
@@ -29,13 +30,16 @@ export default function Document() {
                     })(window,document,'script','dataLayer','GTM-XXXX');`}
                 </Script>
             </Head>
-          <body>
-            <noscript dangerouslySetInnerHTML={{
-                __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX" height="0" width="0" style="display: none; visibility: hidden;" />`,
-            }} />
-            <Main />
-            <NextScript />
-          </body>
+            <body>
+                <noscript
+                    dangerouslySetInnerHTML={{
+                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX" height="0" width="0" style="display: none; visibility: hidden;" />`,
+                    }}
+                />
+                <Main />
+                <Footer />
+                <NextScript />
+            </body>
         </Html>
-  )
+    );
 }

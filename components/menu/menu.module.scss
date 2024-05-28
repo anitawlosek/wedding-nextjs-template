@@ -1,0 +1,93 @@
+$min-static-menu-width: 550px;
+
+.container {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 5;
+
+  border-top: 3px solid var(--highlight-color-dark);
+  background: rgba(43, 83, 72, 0.05);
+}
+
+.openMenu {
+  background: #f5f5f5;
+}
+
+.list {
+  display: none;
+
+  @media (min-width: $min-static-menu-width) {
+    max-width: 700px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+}
+
+.openListMenu {
+  display: block;
+  height: 100vh;
+
+  background: #eee;
+  list-style: none;
+}
+
+.menuItem {
+  display: block;
+  padding: 20px;
+  padding-left: 50px;
+
+  color: var(--highlight-color-dark);
+  font-weight: 300;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    color: #fff;
+    background: var(--highlight-color-dark);
+    transition: background-color 1s, color 1s;
+  }
+
+  @media (min-width: $min-static-menu-width) {
+    text-align: center;
+    padding: 20px;
+  }
+
+  @media (min-width: 600px) {
+    padding: 20px 30px;
+  }
+}
+
+.mainButton {
+  width: 100vw;
+  border: none;
+  background: none;
+  font-size: 1em;
+  font-weight: 300;
+  margin: 0;
+  padding: 20px;
+
+  &:hover, &:focus {
+    color: var(--highlight-color-dark);
+    background: inherit;
+    transition: background-color 1s, color 1s;
+  }
+
+  @media (min-width: $min-static-menu-width) {
+    display: none;
+  }
+}
+
+.title {
+  display: flex;
+}
+
+.menuIcon {
+  display: block;
+  width: 20px;
+  height: 18px;
+  margin-right: 10px;
+}

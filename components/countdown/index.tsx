@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { CountdownItem } from "./coundtownItem";
 import styles from "./countdown.module.scss";
+import sectionStyles from '../../styles/section.module.scss'
 import utilStyles from "../../styles/utils.module.scss";
 
 type CountdownProps = {
@@ -32,13 +33,13 @@ export const Countdown = ({ weddingDate, weddingTime }: CountdownProps) => {
         return () => clearInterval(interval);
     }, [wedding]);
     
-    const daysDiff = diff ? Math.floor(diff / (1000 * 60 * 60 * 24)) : emptyValue
-    const hoursDiff = diff ? Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) : emptyValue
-    const minutesDiff = diff ? Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)) : emptyValue
-    const secondsDiff = diff ? Math.floor((diff % (1000 * 60)) / 1000) : emptyValue
+    const daysDiff = diff ? Math.floor(Math.abs(diff) / (1000 * 60 * 60 * 24)) : emptyValue
+    const hoursDiff = diff ? Math.floor((Math.abs(diff) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)) : emptyValue
+    const minutesDiff = diff ? Math.floor((Math.abs(diff) % (1000 * 60 * 60)) / (1000 * 60)) : emptyValue
+    const secondsDiff = diff ? Math.floor((Math.abs(diff) % (1000 * 60)) / 1000) : emptyValue
 
-    return <div className={utilStyles.card}>
-        <h2 className={utilStyles.heading}>Zostało</h2>
+    return <div className={sectionStyles.wrapper} id="countdown">
+        <h2 className={utilStyles.heading}>{diff >= 0 ? "Zostało" : "Minęło"}</h2>
         <div className={styles.container}>
             <CountdownItem difference={daysDiff} label={daysDiff === 1 ? "dzień" : "dni"} />
             <CountdownItem difference={hoursDiff} label={`godzin${getSuffix(hoursDiff)}`} />

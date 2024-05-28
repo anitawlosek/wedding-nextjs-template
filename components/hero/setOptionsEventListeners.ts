@@ -1,6 +1,6 @@
 import {
     trackAppleOptionClick,
-    trackCloseMenu,
+    trackCloseAddToCalendarMenu,
     trackGoogleOptionClick,
     trackICalOptionClick
 } from "../../lib/tracking";
@@ -17,5 +17,5 @@ export const setOptionsEventListeners = () => {
     appleOptionButton && appleOptionButton.addEventListener('click', trackAppleOptionClick);
 
     const closeMenuButton = document?.getElementById('atcb-btn-custom-close')
-    closeMenuButton && closeMenuButton.addEventListener('click', trackCloseMenu);
+    closeMenuButton && closeMenuButton.addEventListener('click', trackCloseAddToCalendarMenu);
 }

@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 1;
 }
 
 .content {
@@ -17,20 +19,21 @@
   justify-content: space-between;
   text-align: center;
 
-  padding: 40px 10px;
+  padding: 70px 10px 40px 10px;
   color: #fff;
   font-weight: 300;
 
   @media (min-height: 300px) {
-    min-height: 300px;
+    padding: 40px 10px;
+    min-height: 250px;
   }
 
   @media (min-width: 426px) {
     font-weight: 100;
   }
 
-  @media (min-height: 376px) and (min-width: 769px) {
-    min-height: 376px;
+  @media (min-height: 400px) and (min-width: 769px) {
+    min-height: 350px;
   }
 }
 
@@ -39,10 +42,9 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin: 20px 0;
   padding: 0 20px;
 
-  font-family: 'Love Light', cursive;
+  font-family: 'Love Light', 'Snell Roundhand', cursive;
   font-weight: 100;
   font-size: 5rem;
   line-height: 50px;
@@ -52,13 +54,11 @@
     flex-wrap: wrap;
   }
 
-  @media (min-height: 376px) and (min-width: 426px) {
-    margin: 0;
-    font-size: 7rem;
-    line-height: 100px;
+  @media (min-height: 400px) {
+    margin: 20px 0;
   }
 
-  @media (min-height: 376px) and (min-width: 769px) {
+  @media (min-height: 400px) and (min-width: 768px) {
     font-size: 9rem;
     line-height: 130px;
   }
@@ -72,33 +72,67 @@
   letter-spacing: 10px;
   font-size: 1.3rem;
 
-  @media (min-height: 376px) and (min-width: 426px) {
-    font-size: 1.5rem;
-    line-height: 30px;
-  }
-
-  @media (min-height: 376px) and (min-width: 769px) {
+  @media (min-height: 400px) and (min-width: 768px) {
     margin-top: 0;
     font-size: 2rem;
   }
 }
 
 .location {
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 1rem;
-  padding: 0 35px;
-  margin: 20px 0;
+  display: none;
 
-  @media (min-height: 376px) and (min-width: 426px) {
-    padding: 0;
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: 50px;
+  @media (min-height: 400px) {
+    display: block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0 35px;
+    margin: 20px 0;
   }
 
-  @media (min-height: 376px) and (min-width: 769px) {
+  @media (min-height: 400px) and (min-width: 768px) {
     font-size: 1.5rem;
     letter-spacing: 3px;
+  }
+}
+
+.scrollDownContainer {
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+
+  z-index: 5;
+
+  @media (min-height: 300px) {
+    right: calc(50% - 15px);
+  }
+
+  @media (min-height: 450px) {
+    bottom: 3vh;
+  }
+}
+
+.scrollDownButton {
+  color: #fff;
+  background: none;
+  border: none;
+  width: 30px;
+
+  cursor: pointer;
+}
+
+.longArrowIcon {
+  display: none;
+
+  @media (min-height: 600px) {
+    display: block;
+  }
+}
+
+.chevronIcon {
+  display: block;
+
+  @media (min-height: 600px) {
+    display: none;
   }
 }

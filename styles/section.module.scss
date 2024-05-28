@@ -1,22 +1,25 @@
 .wrapper {
   width: 100vw;
+  padding: 30px 0;
+  z-index: 10;
+
+  &:nth-child(odd) {
+    background: var(--background-light);
+  }
 
   &:nth-child(even) {
-    background: var(--background-start);
-  }
-  &:nth-child(odd) {
-    background: #FFF;
+    background: #fff;
   }
 }
 
 .container {
   max-width: 700px;
   margin: 0 auto;
-  padding: 30px 20px;
+  padding: 0 20px;
   text-align: center;
 
   @media (min-width: 769px) {
-    padding: 40px 0;
+    padding: 0;
   }
 }
 
